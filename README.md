@@ -14,6 +14,7 @@
 - [Protected Console](crypto/protected-console) - Author: elbee
 - [scrambler](crypto/scrambler) - Author: Nick Stormer
 - [textbook Schnorr right](crypto/textbook_Schnorr_right) - Author: C15C01337
+- [High Roller](crypto/high_roller) - Author: CACI
 
 * * *
 
@@ -71,6 +72,8 @@
 - [Really Only Echo](misc/really_only_echo) - Author: Ryan Wong
 - [RTL Easy](misc/RTL_Easy) - Author: [Databuoy](https://databuoy.com/)
 - [RTL Warm Up](misc/RTL_Warmup) - Author: [Databuoy](https://databuoy.com/)
+- [EmojiStack](misc/EmojiStack) - Author: CACI
+- [EmojiStackV2](misc/EmojiStackV2) - Author: CACI
 
 * * *
 
