@@ -1,0 +1,16 @@
+title = "Bigger is Better"
+
+category = "crypto"
+difficulty = 3
+author = "elbee"
+discord = "elbee3779"
+flag = "pctf{fun_w1th_l4tt1c3s_f039ab9}"
+
+description = '''
+I heard choosing a small value for e when creating an RSA key pair is a bad idea. So I switched it up!
+
+Author: elbee3779
+'''
+
+# Writeup
+Boneh Durfee attack

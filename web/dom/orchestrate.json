@@ -1,0 +1,6 @@
+{
+	"tag":"sauman",
+	"loc":"",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 9090:9090 {TAGNAME}:latest",
+	"mem":"512m"
+}

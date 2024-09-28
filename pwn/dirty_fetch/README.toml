@@ -1,0 +1,55 @@
+title = "Dirty Fetch"
+
+category = "pwn"
+difficulty = 8
+author = "elbee"
+discord = "elbee3779"
+flag = "pctf{t1m3_2_k3rn3l_r4c3_eea6228cb8}"
+
+description = '''
+My kernel is your kernel. Well, some of it. Here's ioctl.
+'''
+
+# Important Deployment Instructions
+#### Ideally let me deploy this
+This challenge is **NOT** ready to deploy as is.
+SSH in do **NOT** deploy from AWS web console.
+Multiple steps need to be taken to build the challenge environment before deploying.
+1. Navigate to chal/helper_scripts and run `./build_kernel.sh` (requires sudo and will take 10 minutes)
+2. Afterwards, navigate up a directory (chal) and run helper_scripts/rebuild-fs.sh from current working directoy.
+3. Build docker image `sudo docker build -t dirty_fetch .`
+4. Run `sudo docker run -dp 8886:8886 dirty_fetch:latest`
+
+If the above is done, the distributable tar can be updated by navigating to dist and running ./build_dist.sh
+
+To test the solver, navigate to writeup, configure transfer_exploit.py to point to the remote and run the script. Check if you're root on the remote. If the exploit failed, try running again from within the interactive on the remote as the exploit is not reliable ("./solve").
+
+# Solution Description
+This challenge involves a char device, the kernel has all mitigations enabled. (smep,smap,kaslr,kpti,canaries). Two primitives (read/overflow) are to be obtained and utilized for a full ROP chain in kernelspace to commit_creds and return to userspace. Vulnerability one involves ioctl(0x40).
+
+ioctl(0x40) (read)
+- ioctl_param is treated as a pointer to a struct residing in userspace with the attributes:
+	- content (char *)
+	- length (unsigned long)
+- First the value in ioctl_param is copied from userspace to kernelspace and treated as a length.
+- Next data from content (kernel) is copied back to userspace into ioctl_param. The length is determined via len % max
+- max can be controlled with ioctl(0x10) allowing a user to use this option /w ioctl_param to send a large number that will not wrap when copy_to_user is used. This is the read primitive.
+
+ioctl(0x20) (write)
+- ioctl_param is treated as a pointer to a data struct in userspace.
+- first, if global storage is populated, it is freed and set to 0.
+- next validate_buf is called on ioctl_param
+	- this utilizes get_storage_contents on ioctl_param, which is a wrapper function that copies the struct and its attributes from userspace onto the kernel heap
+	- after get_storage_contents retrieves the struct, validate_buf returns true if the length provided in the struct is less than the allowed length (this check is safe)
+- after validate_buf is called, get_storage_conents is called directly to copy the struct into request
+
+Read primitive
+- ioctl(0x10) to change max, ioctl(0x40) to read from contents with an arbritrary length
+
+Overflow
+- ioctl(0x20) checks for a safe struct using get_storage_contents which wraps copy_from_user functionality
+	- However, get_storage_contents is called first in validate_buf and then called again to actually copy the contents.
+	- This creates a data race as multiple threads can interact with a kernel module.
+	- Ideally, validate_buf would fetch the struct and the check would pass. In between this time and the get_storage_conents to fix request, a different thread would modify the struct attribute length in place, bypassing the check.
+	- The request, no matter its size, is safely allocated space on the heap.
+	- To trigger the vulnerability, use ioctl(0x30) to copy request->contents into main's char * contents, which will cause an overflow if the previous race was won.

@@ -1,0 +1,7 @@
+version: '2.4'
+services:
+  shell:
+    build: .
+    ports:
+      - 8889:8889
+    privileged: true

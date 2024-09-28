@@ -1,0 +1,27 @@
+title = "Secret Door"
+
+category = "web"
+difficulty = 2
+author = "sans"
+discord = "sans909"
+flag = "pctf{str_f1rm4t_1s_k1nd8_c00l_7712817812}"
+
+description = '''
+knock knock...
+'''
+
+# Writeup
+
+`tar -xf dist.tar.zx`
+
+Use python `.format()` function to gain access to configs. 
+
+For example, update your email to "sans+{timestamp.__globals__}@gmail.com". 
+
+Then check the notification (logs) to get the `FLASK_SECRET_KEY` and `jwt_key`
+
+Using the secret key and the jwt key set the session to admin role
+
+
+##### Reference
+- https://lucumr.pocoo.org/2016/12/29/careful-with-str-format/

@@ -1,0 +1,6 @@
+{
+	"tag":"protected_console",
+	"loc":"chal",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 6002:1337 {TAGNAME}:latest",
+	"mem":"64m"
+}

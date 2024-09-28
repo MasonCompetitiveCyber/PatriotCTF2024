@@ -1,0 +1,6 @@
+{
+	"tag":"secret_door",
+	"loc":"chal",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 1337:1337 {TAGNAME}:latest",
+	"mem":"512m"
+}

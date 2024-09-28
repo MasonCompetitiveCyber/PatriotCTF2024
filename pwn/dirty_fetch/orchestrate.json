@@ -1,0 +1,6 @@
+{
+        "tag":"dirty_fetch",
+        "loc":"chal",
+        "build":"docker build -t {TAGNAME} . && docker run -dp 8886:8886 {TAGNAME}:latest",
+        "mem":"4g"
+}

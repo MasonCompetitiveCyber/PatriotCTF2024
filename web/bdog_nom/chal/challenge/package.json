@@ -1,0 +1,22 @@
+{
+  "name": "bdog_nom",
+  "version": "0.0.1",
+  "description": "bdog nom from pctf",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sans",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bdog_nom": "file:",
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.3"
+  }
+}

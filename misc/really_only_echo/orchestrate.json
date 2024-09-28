@@ -1,0 +1,6 @@
+{
+	"tag":"really_only_echo",
+	"loc":"chal",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 3333:3333 {TAGNAME}:latest",
+	"mem":"64m"
+}

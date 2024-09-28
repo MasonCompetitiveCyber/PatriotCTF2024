@@ -1,0 +1,14 @@
+title = "dogdays"
+
+category = "web"
+difficulty = 3
+author = "elbee"
+discord = "elbee3779"
+flag = "pctf{3xt3nd_my_th4nk5_e9b5f6aa07}"
+
+description = '''
+Woof woof
+'''
+
+# Writeup
+sha1 hash length extension attack to do LFI check ./writeup

@@ -1,0 +1,13 @@
+title = "Not So Shrimple Is It"
+
+category = "pwn"
+difficulty = 1
+author = "elbee"
+discord = "elbee3779"
+flag = "pctf{ret_2_shr1mp_90cbba754f}"
+
+description = '''
+Peel back the shell, unless you eat shrimp with the shell.
+'''
+
+Use first two overwrites to add null bytes using str functions, final overwrite to add the pointer to shrimp+5 (skipping a push to bypass movaps alignment issue)

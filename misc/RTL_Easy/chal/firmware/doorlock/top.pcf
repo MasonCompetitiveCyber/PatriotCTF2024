@@ -1,0 +1,9 @@
+set_io clock P7
+set_io dout[0] J11
+set_io dout[1] K11
+set_io dout[2] K12
+set_io dout[3] K14
+set_io dout[4] L12
+set_io dout[5] L14
+set_io dout[6] M12
+set_io dout[7] N14

@@ -1,0 +1,8 @@
+[package]
+name = "solution"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+roxmltree = "0.20.0"
+hex = "0.4.3"

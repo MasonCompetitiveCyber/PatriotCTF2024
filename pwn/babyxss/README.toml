@@ -1,0 +1,13 @@
+title = "babyxss"
+
+category = "pwn"
+difficulty = 8
+author = "sky"
+discord = "sky0004"
+flag = "pctf{l3v3l_up!!!_n0w_7ry_4_r34l_x55}"
+
+description = '''
+XSS is hard! Let's get some practice in with a javascript REPL first
+
+(flag is at /flag.txt, d8 is built off tag 11.9.99)
+'''

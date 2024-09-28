@@ -1,0 +1,16 @@
+title = "Protected Console"
+
+category = "crypto"
+difficulty = 7
+author = "elbee"
+discord = "elbee3779"
+flag = "pctf{0nly_g00d_r3spons3_1s_n0ne!!}"
+
+description = '''
+Unfortunately, some bad actor got into our last secure channel. This time we've come up with better implementation. Can you access the secured secure console?
+
+Author: elbee3779
+'''
+
+# Writeup
+CBC padding error oracle and cbc bit flipping to get print(flag)

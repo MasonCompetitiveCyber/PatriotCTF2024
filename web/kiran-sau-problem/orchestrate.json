@@ -1,0 +1,6 @@
+{
+	"tag":"kiran-sau-problem",
+	"loc":"",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 8090:80 {TAGNAME}:latest",
+	"mem":"512m"
+}

@@ -1,0 +1,6 @@
+{
+	"tag":"making-baking-pancakes",
+	"loc":"chal",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 9001:1337 {TAGNAME}:latest",
+	"mem":"64m"
+}

@@ -1,0 +1,16 @@
+title = "Making Baking Pancakes"
+
+category = "misc"
+difficulty = 2
+author = "elbee"
+discord = "elbee3779"
+flag = "pctf{store_bought_pancake_batter_fa82370}"
+
+description = '''
+How many layers are on your pancakes?
+
+Author: Dylan (elbee3779)
+'''
+
+# Writeup
+Simple scripting challenge for challenge-response server refer to writeup

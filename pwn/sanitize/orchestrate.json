@@ -1,0 +1,6 @@
+{
+	"tag":"sanitizer",
+	"loc":"chal",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 5001:5001 --privileged {TAGNAME}:latest",
+	"mem":"64m"
+}

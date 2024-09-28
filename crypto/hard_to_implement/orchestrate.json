@@ -1,0 +1,6 @@
+{
+	"tag":"hard_to_implement",
+	"loc":"chal",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 6001:1337 {TAGNAME}:latest",
+	"mem":"64m"
+}

@@ -1,0 +1,6 @@
+{
+	"tag":"flightscript",
+	"loc":"chal",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 8885:8885 {TAGNAME}:latest",
+	"mem":"64m"
+}

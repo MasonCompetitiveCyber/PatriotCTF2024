@@ -1,0 +1,6 @@
+{
+	"tag":"babyxss",
+	"loc":"chal",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 8889:8889 --privileged {TAGNAME}:latest",
+	"mem":"64m"
+}

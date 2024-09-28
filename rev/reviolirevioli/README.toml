@@ -1,0 +1,10 @@
+title = "Revioli, Revioli, give me the formeoli"
+category = "rev"
+difficulty = 1
+author = "arcticx"
+discord = "arcticx"
+flag = "PCTF{ITALY_01123581321345589144233377}"
+tester = "Txnner"
+description = '''
+Can you unlock the secret formula?
+'''

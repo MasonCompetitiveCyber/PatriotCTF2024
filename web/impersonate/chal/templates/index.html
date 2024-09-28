@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-blue-100 h-screen flex items-center justify-center">
+    <form action="/" method="post" class="flex flex-col bg-white p-8 rounded shadow-md">
+      <h2 class="text-2xl font-bold mb-4">Login with username and password</h2>
+      <input type="text" name="username" class="p-2 border-2 border-gray-300 rounded" placeholder="Username" required autocomplete="off" />
+      <input type="password" name="password" class="p-2 border-2 border-gray-300 rounded mt-4" placeholder="Password" required />
+      {% if error %}
+      <span class="text-red-500 text-sm mt-4">
+        {{ error }}
+      </span>
+      {% endif %}
+      <input type="submit" value="Login" class="p-2 bg-blue-500 text-white rounded mt-4 cursor-pointer" />
+    </form>
+  </body>
+</html>

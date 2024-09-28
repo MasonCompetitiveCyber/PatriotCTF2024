@@ -1,0 +1,16 @@
+title = "Hard to Implement"
+
+category = "crypto"
+difficulty = 3
+author = "elbee"
+discord = "elbee3779"
+flag = "pctf{ab8zf58}"
+
+description = '''
+I have a flag for you. We should talk more over my secure communications channel.
+
+Author: elbee3779
+'''
+
+# Writeup
+ECB known plaintext padding oracle

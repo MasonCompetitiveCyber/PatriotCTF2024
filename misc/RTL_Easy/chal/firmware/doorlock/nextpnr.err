@@ -1,0 +1,12 @@
+Info: constrained 'clock' to bel 'X16/Y0/io1'
+Info: constrained 'dout[0]' to bel 'X33/Y6/io0'
+Info: constrained 'dout[1]' to bel 'X33/Y4/io1'
+Info: constrained 'dout[2]' to bel 'X33/Y4/io0'
+Info: constrained 'dout[3]' to bel 'X33/Y5/io0'
+Info: constrained 'dout[4]' to bel 'X33/Y2/io0'
+Info: constrained 'dout[5]' to bel 'X33/Y3/io1'
+Info: constrained 'dout[6]' to bel 'X33/Y1/io0'
+Info: constrained 'dout[7]' to bel 'X33/Y2/io1'
+ERROR: IO 'din[7]' is unconstrained in PCF (override this error with --pcf-allow-unconstrained)
+ERROR: Loading PCF failed.
+0 warnings, 2 errors

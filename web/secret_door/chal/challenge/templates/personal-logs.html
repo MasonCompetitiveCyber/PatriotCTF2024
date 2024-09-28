@@ -1,0 +1,43 @@
+{% extends "base.html" %} 
+
+{% block pageTitle %}View Logs{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>User Logs</h1>
+    <div id="logs-container">
+        Loading logs...
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/api/view-logs')
+                .then(response => response.json())
+                .then(data => {
+                    const logsContainer = document.getElementById('logs-container');
+                    logsContainer.innerHTML = '';
+                    console.log(data)
+                    if (data.length === 0) {
+                        logsContainer.innerText = 'No logs found.';
+                    } else {
+                        data.forEach(log => {
+                            const logEntry = document.createElement('div');
+                            logEntry.className = 'card mb-2 mt-2';
+                            logEntry.innerHTML = `
+                            <div class="card-body">
+                                <div class="text-muted">${log.log_date}</div>
+                                <div class="log-text text-truncate">${log.log_text}</div>
+                            </div>
+                            `;
+                            logsContainer.appendChild(logEntry);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching logs:', error);
+                    document.getElementById('logs-container').innerHTML = '<p class="no-logs">Error fetching logs.</p>';
+                });
+        });
+    </script>
+</div>
+{% endblock %}

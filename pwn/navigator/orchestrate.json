@@ -1,0 +1,6 @@
+{
+	"tag":"navigator",
+	"loc":"chal",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 8887:8887 --privileged {TAGNAME}:latest",
+	"mem":"64m"
+}

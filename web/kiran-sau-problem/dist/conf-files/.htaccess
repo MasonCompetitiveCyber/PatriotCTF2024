@@ -1,0 +1,6 @@
+<Files "challenge.php">
+    AuthType Basic 
+    AuthName "Admin Panel"
+    AuthUserFile "/etc/apache2/.htpasswd"
+    Require valid-user
+</Files>

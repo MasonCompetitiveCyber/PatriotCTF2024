@@ -1,0 +1,142 @@
+<%- include('layout', { title: "Home Page", body: `
+<style>
+  /* Animation from : https://codepen.io/podgorniy/pen/abVxga */
+  body {
+    background: black;
+    overflow: hidden;
+
+  }
+
+  .pacman {
+    background: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px; /* -200px / 2 */
+    margin-left: -100px; /* -200px / 2 */
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+  }
+
+  .pacman-food {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px; /* -20px / 2 */
+    overflow: hidden;
+    width: 1050px; /* (100px + 20px) * 5 */
+  }
+
+  @keyframes om-nom-nom-top {
+    0% {
+      border-bottom-width: 0;
+    }
+    50% {
+      border-bottom-width: 100px; /* 200px / 2 */
+    }
+    100% {
+      border-bottom-width: 0;
+    }
+  }
+
+  @keyframes om-nom-nom-bottom {
+    0% {
+      border-top-width: 0;
+    }
+    50% {
+      border-top-width: 100px; /* 200px / 2 */
+    }
+    100% {
+      border-top-width: 0;
+    }
+  }
+
+  .jaw > div {
+    width: 0;
+    position: absolute;
+    height: 0;
+    left: 66px; /* 200px / 3 */
+    border-color: transparent;
+    border-style: solid;
+    border-left-width: 133px; /* 200px / 1.5 */
+  }
+
+  .jaw > .top {
+    border-bottom-color: black;
+    border-bottom-width: 100px; /* 200px / 2 */
+    animation: om-nom-nom-top 0.4s infinite;
+    bottom: 100px; /* 200px / 2 */
+  }
+
+  .jaw > .bottom {
+    border-top-width: 100px; /* 200px / 2 */
+    border-top-color: black;
+    top: 100px; /* 200px / 2 */
+    animation: om-nom-nom-bottom 0.4s infinite;
+  }
+
+  @keyframes food-mooving {
+    0% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(-100px); /* -200px / 2 */
+    }
+  }
+
+  @keyframes food-eated {
+    0% {
+      opacity: 1;
+    }
+    74.9% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .food-item:first-of-type {
+    animation: food-eated 0.4s infinite;
+  }
+
+  .food-item {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: white;
+    float: left;
+    margin-left: 100px; /* 200px / 2 */
+  }
+
+  .infinite-dish {
+    position: relative;
+    animation: food-mooving 0.4s infinite;
+    animation-timing-function: linear;
+  }
+</style>
+<div class="container text-center text-white mt-5">
+  <h1>Site under construction</h1>
+
+</div>
+<!-- Animation from: https://codepen.io/podgorniy/pen/abVxga -->
+<div class="pacman">
+  <div class="jaw">
+    <div class="top"></div>
+    <div class="bottom"></div>
+  </div>
+</div>
+<div class="pacman-food">
+  <div class="infinite-dish">
+    <div class="food-item"></div>
+    <div class="food-item"></div>
+    <div class="food-item"></div>
+    <div class="food-item"></div>
+    <div class="food-item"></div>
+  </div>
+</div>
+` }); %>

@@ -1,0 +1,7 @@
+We've been after a notorious skiddie who took the "Is it possible to have a completely secure computer system" question a little too literally.
+
+After he found out we were looking for them, they moved to live at the bottom of the ocean in a concrete box to hide from the law.
+
+They sent us this message and executable. Please get their password so we can move forward with our mission.
+
+This pyc was created in python3.11, but you don't need a specific version of python 3 to solve this...

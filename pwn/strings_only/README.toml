@@ -1,0 +1,15 @@
+title = "strings only"
+
+category = "pwn"
+difficulty = 6
+author = "elbee"
+discord = "elbee3779"
+flag = "pctf{a_byte_is_all_i_need_b72c9d241a2}"
+
+description = '''
+Even if you did find something wrong with my app, what could you possibly do with just strings?
+'''
+
+The challenge is a glibc heap challenge that utilizes the project zero null 
+byte technique to create overlapping chunks and create a dup primitive over
+the key variable on main's stack (the index option can be used to create a fake fast chunk). See solver in ./writeup.

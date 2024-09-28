@@ -1,0 +1,17 @@
+title = "Flight Script"
+
+category = "pwn"
+difficulty = 5
+author = "elbee"
+discord = "elbee3779"
+flag = "pctf{wr1t3_l4rg3_wh3r3_123b10aec4f}"
+
+description = '''
+Easy flights just got easier. Add your own logs and scripts to our flight console, now leakless!
+'''
+
+This challenge utilizes the following primitives:
+	- Largebin attack into a global variable used as a length in an fgets
+	- Overflow for libc leak
+	- Overflow for shell
+Refer to writeup/solver.py

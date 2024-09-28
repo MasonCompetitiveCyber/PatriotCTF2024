@@ -1,0 +1,12 @@
+title="RTL Easy"
+
+category="misc"
+difficulty=3
+author='''<a href="https://databuoy.com/">Databuoy</a>"
+flag="PCTF{H@rd_Encryption_is_3asy}"
+
+description='''
+They said they added a layer of encryption, do you think you can 
+still get in? 
+'''
+

@@ -1,0 +1,6 @@
+{
+	"tag":"not_so_shrimple_is_it",
+	"loc":"chal",
+	"build":"docker build -t {TAGNAME} . && docker run -dp 8884:8884 --privileged {TAGNAME}:latest",
+	"mem":"64m"
+}

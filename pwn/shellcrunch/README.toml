@@ -1,0 +1,13 @@
+title = "Shellcrunch"
+
+category = "pwn"
+difficulty = 3
+author = "draz"
+discord = "draz0x7"
+flag = "pctf{x0r_fu_1s_str0ng}"
+
+description = '''
+I hope you're good at shellcoding...
+'''
+
+Refer to `solver.py`

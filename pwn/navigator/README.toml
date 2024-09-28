@@ -1,0 +1,13 @@
+title = "Navigator"
+
+category = "pwn"
+difficulty = 3
+author = "elbee"
+discord = "elbee3779"
+flag = "pctf{th4t_w45_ann0ying_014d0a7cb3d}"
+
+description = '''
+Welcome to navigator! You can change stuff, view stuff and THAT'S IT.
+'''
+
+This challenge utilizes a one-byte write and read. The read is obtained via choosing a negative value for the index in the view function and leaking a libc function byte by byte. The write is achieved because the max index for pinSet is improperly calculated. To make life easier, it is ideal that wrapper functions are made for both primitives to write whole addresses at a time.

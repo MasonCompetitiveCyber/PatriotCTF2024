@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block pageTitle %}Update Email{% endblock %} {%
+block content %}
+<div class="container">
+  <h1>Update Email</h1>
+  <form id="update-email-form">
+    <div class="form-group">
+      <label for="email">New Email:</label>
+      <input  class="form-control" type="email" id="email" name="email" required />
+    </div>
+
+    <input type="submit" value="Update Email" class="btn btn-primary"/>
+  </form>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("update-email-form");
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const email = document.getElementById("email").value;
+
+      try {
+        const response = await fetch("/api/update-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        });
+        const redirectedUrl = response.url;
+
+        if (response.ok) {
+          if (redirectedUrl) {
+            alert("Email updated successfully!");
+            window.location.href = redirectedUrl;
+          }
+        } else {
+          alert("Error updating email");
+        }
+      } catch (error) {
+        alert("An error occurred: " + error.message);
+      }
+    });
+  });
+</script>
+{% endblock %}

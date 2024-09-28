@@ -1,0 +1,12 @@
+#!/bin/sh
+
+mount -t proc none /proc
+mount -t sysfs none /sys
+
+insmod /vuln.ko
+
+chown root /flag.txt
+chmod 700 /flag.txt
+
+exec su -l ctf
+/bin/sh

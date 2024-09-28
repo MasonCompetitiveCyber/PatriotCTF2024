@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}Register{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Register</h1>
+    <form id="register-form">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input class="form-control" type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input class="form-control" type="password" id="password" name="password" required>
+        </div>
+
+        <input type="submit" value="Register" class="btn btn-primary">
+    </form>
+    <p>Already have an account? <a href="/">Login here</a>.</p>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('register-form');
+
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                try {
+                    const response = await fetch('/api/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email, password }),
+                        redirect: 'follow'
+                    });
+
+                    if (response.ok) {
+
+                        const redirectedUrl = response.url;
+                        if (redirectedUrl) {
+                            alert('Registration successful!');
+                            window.location.href = redirectedUrl;
+                        }
+                    } else {
+                        const error = await response.json();
+                        alert('Registration failed: ' + error.message);
+                    }
+                } catch (error) {
+                    alert('An error occurred: ');
+                }
+            });
+        });
+    </script>
+</div>
+{% endblock %}

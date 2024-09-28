@@ -1,0 +1,32 @@
+title = "Bit by bit"
+
+category = "crypto"
+difficulty = 4
+author = "elbee"
+discord = "elbee3779"
+flag = ""
+
+description = '''
+I heard one-time pads are unbreakable. Good luck!
+'''
+
+# Writeup
+The solve is a two-time pad. Essentially the key is composed of a static value and an IV. Once the IV wraps, multiple keys will be repeated. This keystream
+is used for a custom stream cipher:
+pt ^ ks = ct
+if keystreams are repeated one could do the following
+
+(ct[ksA] ^ ct[ksB]) = (pt ^ pt) where ksA==ksB
+
+although the user cannot derive the key from this itself, they can try and use (pt ^ pt) to xor a value that might be the key.
+This allows the user to reduce the amount of possible keys to just under 1300.
+
+(pt^pt)^(common word)=(possible key)
+
+this attack takes advantage of the fact that english and many other forms of data are redundant.
+writing a script that does this will eventually generate the correct key.
+
+(ct[ksA] ^ ct[ksB]) ^ 'the' = key
+ct ^ key = pt
+
+# Deployment still has to be created
